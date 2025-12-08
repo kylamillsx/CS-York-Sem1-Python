@@ -1,0 +1,26 @@
+phrase = input("Write a sentence without punctuation")
+newphrase = ""
+for i in range(len(phrase)):
+    if phrase[i] != " ":
+        if phrase[i-1] == " ":
+            newphrase = newphrase + phrase[i].upper()
+        elif i == 0:
+            newphrase = newphrase + phrase[i].upper()
+        else:
+            newphrase = newphrase + phrase[i].lower()
+print(newphrase)
+camelCase = input("Enter a camel case sentence")
+sentence = []
+item = ""
+for i in range(len(camelCase)):
+    if i == 0:
+        item = item + camelCase[i]
+    elif camelCase[i] == camelCase[i].lower():
+        item = item + camelCase[i]
+        if i == len(camelCase)-1:
+            sentence.append(item)
+    else:
+        sentence.append(item)
+        item = ""
+        item = item + camelCase[i]
+print(sentence)
