@@ -1,0 +1,13 @@
+text = input("Enter the text")
+key = int(input("Enter the key"))
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+cipher = ""
+for char in text: #go through each character in the text
+    if char in alphabet:#check if the character is in the alphabet
+        position = alphabet.find(char)#find the position of the character in the alphabet  
+        newPosition = (position + key) % 26 #calculate the new position with the key
+        newCharacter = alphabet[newPosition]#find the new character in the alphabet
+        cipher = cipher + newCharacter#add the new character to the cipher text
+    else:
+        cipher = cipher + char#if the character is not in the alphabet, add it to the cipher text unchanged
+print(cipher)
