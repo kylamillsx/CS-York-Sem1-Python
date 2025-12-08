@@ -1,0 +1,16 @@
+phrase = str(input("Enter a word or phrase or number"))
+phrase = phrase.lower()
+phrase = ''.join([char for char in phrase if char.isalnum()])#gets rid of special char 
+forwards = []
+reverse = [] 
+palindrome = False
+for i in range (len(phrase),0,-1):
+    reverse.append(phrase[i-1])
+for i in range (len(phrase)):
+    forwards.append(phrase[i])
+for i in range(len(phrase)):
+    if (reverse[i] == forwards[i]):
+        palindrome = True
+    else:
+        palindrome = False
+print(palindrome)
